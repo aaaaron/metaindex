@@ -1,0 +1,9 @@
+# 970307	aarona	support for mSQL 2.0b4	changed index to idx
+#														removed primary key
+
+create table search_files (
+	idx int not,
+	path char(50),
+	title char(120),
+	descr char(360)
+) \g

@@ -1,0 +1,8 @@
+# 970307	aarona	support for mSQL 2.0b4	changed index to idx
+#														removed primary key
+
+create table search_words ( 
+	idx int not null,
+	word char(50)
+) \g
+

@@ -1,0 +1,15 @@
+%pointer
+%option outfile="flex_doc.fc"
+/* %option prefix="doc"   */
+
+PAIR            [[:alnum:]]+[ ^M\n]*=[ ^M\n]*["]?[[:alnum:] ()\-[\]:,.'+\n!]*["]?
+TITLE           [<][ ]*[Tt][Ii][Tt][Ll][Ee][ ]*[>][[:alnum:] ()\-[\]:,.'+\n!]*[<][ ]*[/][Tt][Ii][Tt][Ll][Ee][ ]*[>]
+
+%%
+
+{TITLE}  { title = strdup(yytext); }
+{PAIR}	{ text = strdup(yytext); return; }
+.       
+\n
+
+%%
